@@ -11,7 +11,7 @@ public class AddTwoNumbers {
 		l2.next = new ListNode(6);
 		l2.next.next = new ListNode(4);
 
-		addTwoNumbers(l1, l2);
+		ListNode l3 = addTwoNumbers(l1, l2);
 
 		while (l1.next != null) {
 			System.out.println("val : " + l1.val);
