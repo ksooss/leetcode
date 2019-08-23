@@ -11,44 +11,42 @@ public class AddTwoNumbers {
 		l2.next = new ListNode(6);
 		l2.next.next = new ListNode(4);
 
-		ListNode l3 = addTwoNumbers(l1, l2);
+		ListNode result = addTwoNumbers(l1, l2);
 
-		while (l1.next != null) {
-			System.out.println("val : " + l1.val);
-			l1 = l1.next;
+		while (result.next != null) {
+			System.out.println("val : " + result.val);
+			result = result.next;
 		}
 	}
 
 	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		sumTwoNumbers(l1, l2);
-		return l1;
+		ListNode result = new ListNode(0);
+		sumTwoNumbers(l1, l2, result);
+		return result;
 	}
 
-	public static void sumTwoNumbers(ListNode l1, ListNode l2) {
-		int sum = l1.val + l2.val;
+	public static void sumTwoNumbers(ListNode l1, ListNode l2, ListNode result) {
+
+		int sum = l1.val + l2.val + result.val;
 		if (sum >= 10) {
-			if (l1.next == null) {
-				ListNode tempL = new ListNode(1);
-				l1.next = tempL;
-			} else
-				l1.next.val++;
-
-			l1.val = sum - 10;
-		} else {
-			l1.val = sum;
+			result.next = new ListNode(1);
+			sum -= 10;
 		}
+		result.val = sum;
 
-		if (l1.next != null || l2.next != null) {
+		if (l1.next != null || l2.next != null || result.next != null) {
 			if (l1.next == null)
 				l1.next = new ListNode(0);
 
 			if (l2.next == null)
 				l2.next = new ListNode(0);
 
-			sumTwoNumbers(l1.next, l2.next);
+			if (result.next == null)
+				result.next = new ListNode(0);
+
+			sumTwoNumbers(l1.next, l2.next, result.next);
 		}
 	}
-
 }
 
 class ListNode {
