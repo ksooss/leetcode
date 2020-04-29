@@ -4,11 +4,13 @@ public class Reverse {
 
 	public static void main(String[] args) {
 		int x = -123;
-		int result = reverse(x);
+		
+		Reverse obj = new Reverse();
+		int result = obj.reverse(x);
 		System.out.println("result : " + result);
 	}
 
-	public static int reverse(int x) {
+	public int reverse(int x) {
 		try {
 			boolean negFlag = x < 0 ? true : false;
 			if (negFlag)

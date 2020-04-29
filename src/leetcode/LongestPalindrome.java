@@ -4,11 +4,13 @@ public class LongestPalindrome {
 
 	public static void main(String[] args) {
 		String s = "";
-		String result = longestPalindrome(s);
-		System.out.println(result);
+		
+		LongestPalindrome obj = new LongestPalindrome();
+		String result = obj.longestPalindrome(s);
+		System.out.println("result : " + result);
 	}
 
-	public static String longestPalindrome(String s) {
+	public String longestPalindrome(String s) {
 		
         return null;
     }

@@ -4,11 +4,13 @@ public class MyAtoi {
 
 	public static void main(String[] args) {
 		String str = "world    -42";
-		int result = myAtoi(str);
+		
+		MyAtoi obj = new MyAtoi();
+		int result = obj.myAtoi(str);
 		System.out.println("result : " + result);
 	}
 
-	public static int myAtoi(String str) {
+	public int myAtoi(String str) {
 		boolean negFlag = false;
 		int result = 0;
 		str = str.trim();

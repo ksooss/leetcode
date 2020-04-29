@@ -4,14 +4,16 @@ public class IsPalindrome {
 
 	public static void main(String[] args) {
 		int x = 121;
-		boolean result = isPalindrome(x);
+		
+		IsPalindrome obj = new IsPalindrome();
+		boolean result = obj.isPalindrome(x);
 		if (result)
-			System.out.println("true");
+			System.out.println("result is true");
 		else
-			System.out.println("false");
+			System.out.println("result is false");
 	}
 
-	public static boolean isPalindrome(int x) {
+	public boolean isPalindrome(int x) {
 		boolean result = false;
 		int origin = x;
 		if (x >= 0) {

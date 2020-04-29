@@ -5,10 +5,13 @@ public class FindMedianSortedArrays {
 	public static void main(String[] args) {
 		int[] nums1 = {};
 		int[] nums2 = { 2, 3 };
-		double result = findMedianSortedArrays(nums1, nums2);
+		
+		FindMedianSortedArrays obj = new FindMedianSortedArrays();
+		double result = obj.findMedianSortedArrays(nums1, nums2);
+		System.out.println("result : " + result);
 	}
 
-	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		int sumOfLength = nums1.length + nums2.length;
 		int[] nums3 = new int[sumOfLength];
 

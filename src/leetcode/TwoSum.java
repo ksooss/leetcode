@@ -7,13 +7,15 @@ public class TwoSum {
 
 	public static void main(String[] args) {
 		int[] nums = { 2, 7, 11, 15 };
-		int[] result = twoSum(nums, 9);
+		
+		TwoSum obj = new TwoSum();
+		int[] result = obj.twoSum(nums, 9);
 		for (int num : result) {
 			System.out.println("result : " + num);
 		}
 	}
 
-	public static int[] twoSum(int[] nums, int target) {
+	public int[] twoSum(int[] nums, int target) {
 		int length = nums.length;
 
 		if (nums == null || length <= 1) {

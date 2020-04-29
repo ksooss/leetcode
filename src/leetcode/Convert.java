@@ -5,11 +5,13 @@ public class Convert {
 	public static void main(String[] args) {
 		String s = "PAYPALISHIRING";
 		int numRows = 4;
-		String result = convert(s, numRows);
-		System.out.println(result);
+		
+		Convert obj = new Convert();
+		String result = obj.convert(s, numRows);
+		System.out.println("result : " + result);
 	}
 
-	public static String convert(String s, int numRows) {
+	public String convert(String s, int numRows) {
 		if (numRows >= s.length() || numRows == 1) {
 			return s;
 		} else {

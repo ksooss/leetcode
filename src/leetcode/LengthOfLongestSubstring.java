@@ -7,11 +7,13 @@ public class LengthOfLongestSubstring {
 
 	public static void main(String[] args) {
 		String s = "abba";
-		int result = lengthOfLongestSubstring(s);
+		
+		LengthOfLongestSubstring obj = new LengthOfLongestSubstring();
+		int result = obj.lengthOfLongestSubstring(s);
 		System.out.println("result : " + result);
 	}
 
-	public static int lengthOfLongestSubstring(String s) {
+	public int lengthOfLongestSubstring(String s) {
 		int length = s.length();
 		char charList[] = s.toCharArray();
 		int start = 0;

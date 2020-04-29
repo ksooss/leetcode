@@ -11,15 +11,16 @@ public class AddTwoNumbers {
 		l2.next = new ListNode(6);
 		l2.next.next = new ListNode(4);
 
-		ListNode result = addTwoNumbers(l1, l2);
+		AddTwoNumbers obj = new AddTwoNumbers();
+		ListNode result = obj.addTwoNumbers(l1, l2);
 
 		while (result.next != null) {
-			System.out.println("val : " + result.val);
+			System.out.println("result : " + result.val);
 			result = result.next;
 		}
 	}
 
-	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode result = new ListNode(0);
 		sumTwoNumbers(l1, l2, result);
 		return result;
