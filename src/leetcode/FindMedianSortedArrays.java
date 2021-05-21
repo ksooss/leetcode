@@ -3,8 +3,8 @@ package leetcode;
 public class FindMedianSortedArrays {
 
 	public static void main(String[] args) {
-		int[] nums1 = {};
-		int[] nums2 = { 2, 3 };
+		int[] nums1 = {1, 3};
+		int[] nums2 = { 2 };
 		
 		FindMedianSortedArrays obj = new FindMedianSortedArrays();
 		double result = obj.findMedianSortedArrays(nums1, nums2);
@@ -12,23 +12,35 @@ public class FindMedianSortedArrays {
 	}
 
 	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+		int len1 = nums1.length;
+		int len2 = nums2.length;
+		int i1 = 0;
+		int i2 = 0;
+		int[] arr = new int[len1+len2];
+		for(int i = 0; i < len1+len2; i++) {
+			if (i2==len2)
+				arr[i] = nums1[i1++];
+			else if(i1==len1)
+				arr[i] = nums2[i2++];
+			else if(nums1[i1]<=nums2[i2])
+				arr[i] = nums1[i1++];
+			else
+				arr[i] = nums2[i2++];
+		}
+		int len3 = arr.length;
+		if(len3%2==1)
+			return arr[len3/2];
+		else
+			return ((double)arr[len3/2-1]+arr[len3/2])/2;
+	}
+	
+	public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
 		int sumOfLength = nums1.length + nums2.length;
 		int[] nums3 = new int[sumOfLength];
 
 		int idx1 = 0;
 		int idx2 = 0;
 		int idx3 = 0;
-//		for (; idx1 < nums1.length && idx2 < nums2.length; idx3++) {
-//			if (nums1[idx1] < nums2[idx2])
-//				nums3[idx3] = nums1[idx1++];
-//			else
-//				nums3[idx3] = nums2[idx2++];
-//		}
-//		for (; idx1 < nums1.length; idx1++)
-//			nums3[idx3++] = nums1[idx1];
-//
-//		for (; idx2 < nums2.length; idx2++)
-//			nums3[idx3++] = nums2[idx2];
 
 		while (idx1 <= nums1.length - 1 || idx2 <= nums2.length - 1) {
 			if (idx1 == nums1.length)
