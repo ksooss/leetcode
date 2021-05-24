@@ -42,8 +42,8 @@ public class AddTwoNumbers {
         }
         return result;
 	}
-	
-	public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+	/*
+	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode result = new ListNode(0);
 		sumTwoNumbers(l1, l2, result);
 		return result;
@@ -70,6 +70,7 @@ public class AddTwoNumbers {
 			sumTwoNumbers(l1.next, l2.next, result.next);
 		}
 	}
+	*/
 }
 
 class ListNode {
