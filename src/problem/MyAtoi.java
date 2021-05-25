@@ -10,21 +10,21 @@ public class MyAtoi {
 		System.out.println("result : " + result);
 	}
 
-	public int myAtoi(String str) {
+	public int myAtoi(String s) {
 		boolean negFlag = false;
 		int result = 0;
-		str = str.trim();
+		s = s.trim();
 		try {
-			for (int i = 0; i < str.length(); i++) {
-				char s = str.charAt(i);
-				if (!(s == '+' || s == '-' || (s >= '0' && s <= '9')))
+			for (int i = 0; i < s.length(); i++) {
+				char c = s.charAt(i);
+				if (!(c == '+' || c == '-' || (c >= '0' && c <= '9')))
 					break;
-				else if (i > 0 && !(s >= '0' && s <= '9'))
+				else if (i > 0 && !(c >= '0' && c <= '9'))
 					break;
-				else if (s == '-')
+				else if (c == '-')
 					negFlag = true;
-				else if (s >= '0' && s <= '9') {
-					int num = s - '0';
+				else if (c >= '0' && c <= '9') {
+					int num = c - '0';
 					result = Math.multiplyExact(result, 10);
 					result = Math.addExact(result, num);
 				}
