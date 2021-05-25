@@ -1,4 +1,4 @@
-package leetcode;
+package problem;
 
 public class LongestPalindrome {
 
